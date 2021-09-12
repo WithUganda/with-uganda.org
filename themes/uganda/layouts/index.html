@@ -1,0 +1,86 @@
+{{ define "main" }}
+<div id="hero">
+    <div class="c">
+        <h1>Hand in Hand with Uganda</h1>
+        <a href="/de/projekte" class="btn on medium-bg">Lerne unsere Projekte kennen</a>
+        <a href="/de/spenden" class="btn btn-cta on medium-bg">❤️ Spende jetzt!</a>
+    </div>
+</div>
+
+<section id="projects" class="py-3">
+    <div class="c">
+        <h1>Unsere Projekte</h1>
+        <div class="lead"></div>
+        <div class="r c-3">
+            <div class="col">
+                <article class="card">
+                    <img src="https://static.dw.com/image/17306813_303.jpg" alt="" class="ir">
+                    <h1>Neubau eines Hospitals</h1>
+                    <p></p>
+                    <a href=""></a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card">
+                    <img src="https://static.dw.com/image/17306808_303.jpg" alt="" class="ir">
+                    <h1>Bau einer Hühnerfarm</h1>
+                    <p></p>
+                    <a href=""></a>
+                </article>
+            </div>
+            <div class="col">
+                <article class="card">
+                    <img src="https://static.dw.com/image/17308130_303.jpg" alt="" class="ir">
+                    <h1>Konstruktion eines Trinkwasser-Brunnens</h1>
+                    <p></p>
+                    <a href=""></a>
+                </article>
+            </div>
+        </div>
+        <a href="/projekte" class="btn on light-bg">Entdecke alle unsere Projekte</a>
+    </div>
+</section>
+
+<section class="posts py-3">
+    <div class="c">
+        <h1>Posts</h1>
+        {{ range first 3 (where site.RegularPages "Type" "in" "posts") }}
+
+        <div class="row row-max-1">
+
+            <div class="card card-lesson">
+                <div class="card-content">
+
+                    <a href="{{ .RelPermalink }}">
+                        <h3>{{ .Title }}</h3>
+                    </a>
+
+                    <p>{{ .Params.description }}</p>
+
+                </div>
+            </div>
+        </div>
+
+        {{ end }}
+    </div>
+</section>
+
+<section class="bg-secondary">
+    <div class="c">
+        <div class="r">
+            <div class="col f ac o-sm-2">
+                <div class="content">
+                    <h2>Uganda – Land und Leute</h2>
+                    <p>Uganda ist ein Binnenstaat in Ostafrika. Hauptstadt und größte Stadt Ugandas ist Kampala. Mit einem nominellen Bruttosozialprodukt von jährlich 638 US-$ pro Kopf ist das Land eines der ärmsten der Welt.</p>
+                    <p>Die Republik ist ein autoritär geführtes Regime, welches nach der Unabhängigkeit vom Vereinigten Königreich zunächst als Einparteiensystem konzipiert wurde. In jüngerer Zeit hat sich das Land einem Demokratisierungsprozess geöffnet. Amtssprachen sind Englisch und Swahili, im autonomen Königreich Buganda auch Luganda; weitere 40 Sprachen werden im Alltag verwendet.</p>
+                    <p> Uganda ist Mitglied in der Afrikanischen Union, dem Commonwealth of Nations, der Organisation der Islamischen Konferenz und Ostafrikanischen Gemeinschaft.</p>
+                    <p>— Quelle: <a href="https://de.wikipedia.org/wiki/Uganda">Wikipedia</a></p>
+                </div>
+            </div>
+            <div class="col f as pb-2 o-sm-1"><img src="/location-uganda-africa.svg" alt=""></div>
+        </div>
+    </div>
+
+</section>
+{{ .Content }}
+{{ end }}
